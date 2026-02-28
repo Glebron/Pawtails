@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawTails</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f5f9ff 0%, #eef6ff 100%);
+      font-family: "Avenir Next", "Nunito", "Trebuchet MS", sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .blue {
+      color: #5d8fcb;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(92, 168, 255, 0.3), rgba(92, 168, 255, 0));
+      filter: blur(7px);
+    }
+
+    body::before {
+      width: 620px;
+      height: 620px;
+      top: -210px;
+      left: -170px;
+    }
+
+    body::after {
+      width: 620px;
+      height: 620px;
+      right: -170px;
+      bottom: -210px;
+    }
+
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3em;
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+
+    .read-button {
+      height: 58px;
+      padding: 1em 2em;
+      border-radius: 35px;
+      border: none;
+      color: white;
+      background:linear-gradient(180deg, #b7dbf4 0%, #5fa8ff 100%);
+      font-size: 1em;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(92, 168, 255, 0.34);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .read-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(92, 168, 255, 0.42);
+      filter: saturate(1.05);
+    }
+
+    .cards {
+      width: min(1000px, 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-bottom: 3em;
+    }
+
+    .card {
+      width: 270px;
+      min-height: 480px;
+      border-radius: 36px;
+      background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
+      border: 1px solid rgba(110, 158, 218, 0.14);
+      box-shadow: 0 18px 44px rgba(122, 154, 194, 0.22);
+      padding: 36px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 4em;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+
+    .left {
+      transform: rotate(-12deg);
+    }
+
+    .right {
+      transform: rotate(12deg);
+      margin-top: 7em;
+    }
+
+    .title {
+      margin: 0;
+      line-height: 1.3;
+      color: #2f3846;
+      font-size: 22px;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+    }
+
+    .accent {
+      color: #5d8fcb;
+      font-weight: 700;
+    }
+
+    .icon-food {
+      width: 180px;
+      max-width: 100%;
+      object-fit: contain;
+      margin: 28px 0 22px;
+    }
+
+    .icon-routine {
+      width: 125px;
+      max-width: 100%;
+      object-fit: contain;
+      margin: 28px 0 22px;
+    }
+
+    .dots {
+      color: #c8d6ea;
+      font-size: 19px;
+      user-select: none;
+    }
+
+    .dots .active {
+      color: #5d8fcb;
+    }
+
+    .policy {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      color: #2f3846;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(92, 168, 255, 0.14);
+      border-radius: 24px;
+    }
+
+    .policy h2 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      color: #2f3846;
+    }
+
+    .policy p {
+      margin: 0 0 16px;
+    }
+
+    .policy h3 {
+      margin: 26px 0 10px;
+      font-size: 22px;
+    }
+
+    .policy ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    .policy li {
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      text-align: center;
+      color: #2f3846
+    }
+
+    @media (max-width: 800px) {
+
+      body::after {
+      display: none ;
+    }
+
+
+    body::before {
+    display: none ;
+    }
+
+      .cards {
+        width: 100%;
+        flex-wrap: nowrap;
+        gap: 14px;
+        margin-bottom: 3.2em;
+      }
+
+      .card {
+        width: min(44vw, 190px);
+        min-height: 370px;
+        border-radius: 26px;
+        padding: 22px 14px 16px;
+        padding-top: 2.3em;
+      }
+
+      .left {
+        transform: rotate(-10deg);
+      }
+
+      .right {
+        transform: rotate(10deg);
+        margin-top: 3.8em;
+      }
+
+      .title {
+        font-size: 17px;
+      }
+
+      .icon-food {
+        width: min(34vw, 120px);
+        margin: 16px 0 12px;
+      }
+
+      .icon-routine {
+        width: min(26vw, 92px);
+        margin: 16px 0 12px;
+      }
+
+      .dots {
+        font-size: 16px;
+      }
+
+      .policy {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1 class="main-title">Welcome to PawTails <br><span class="blue">Privacy Policy</span></h1>
+      <main class="cards">
+        <section class="card left">
+          <h1 class="title">Welcome to <span class="accent">PawTails</span><br />Privacy Policy</h1>
+          <img class="icon-food" src="food.png" alt="Pet food bowl" />
+          <div class="dots"><span class="active">• </span>• • • • • •</div>
+        </section>
+
+        <section class="card right">
+          <h1 class="title">Let's create a Pet<br /><span class="accent">routine</span> together!</h1>
+          <img class="icon-routine" src="routine.png" alt="Routine bell icon" />
+          <div class="dots">• <span class="active">•</span> • • • • •</div>
+        </section>
+
+      </main>
+
+
+      <button class="read-button" type="button" id="read-policy-btn">Read Privacy Policy</button>
+    </div>
+  </section>
+
+
+  <section id="privacy-policy" class="policy">
+    <h2>Privacy Policy</h2>
+    <p><strong>Last updated:</strong> February 26, 2026</p>
+    <p>This Privacy Policy explains how PetCare collects, uses, stores, and shares information when you use the app.</p>
+
+    <h3>Information We Collect</h3>
+    <ul>
+      <li><strong>Device account ID:</strong> a random app-specific identifier stored on your device (Keychain and local storage) to keep your app data linked to your device.</li>
+      <li><strong>Pet profile and routine data:</strong> pet name, onboarding answers (such as traits and routine preferences), reminders, to-do activity, and completion history (including optional poop rating entries).</li>
+      <li><strong>Pet photo:</strong> if you choose one in onboarding or profile editing, image data may be stored locally and synced to cloud data for your pet profile.</li>
+      <li><strong>Collaboration data:</strong> pet members, invite tokens/links, and role information (owner/editor/viewer) for shared pet access.</li>
+      <li><strong>Push notification data:</strong> messaging token, platform, bundle identifier, and device name for silent sync notifications.</li>
+      <li><strong>Diagnostics and analytics:</strong> app events, screen views, app version/build, active pet context, and non-fatal crash/error logs through Firebase Analytics and Crashlytics.</li>
+      <li><strong>Safety reports:</strong> if submitted, report category/details, reporter role, related pet/member IDs, and timestamps.</li>
+    </ul>
+
+    <h3>How We Use Information</h3>
+    <ul>
+      <li>Provide core features such as pet routines, reminders, onboarding progress, and shared family/caregiver access.</li>
+      <li>Sync data across devices and collaborators using Firebase Firestore.</li>
+      <li>Send background sync notifications so shared pet tasks stay up to date.</li>
+      <li>Monitor reliability and improve performance using analytics and crash reporting.</li>
+      <li>Support trust and safety workflows for reported abuse or inappropriate behavior.</li>
+    </ul>
+
+    <h3>How Information Is Shared</h3>
+    <ul>
+      <li><strong>With invited pet members:</strong> pet profile and routine information is visible to users you invite to the same pet workspace.</li>
+      <li><strong>With service providers:</strong> Firebase services (Firestore, Cloud Messaging, Analytics, Crashlytics, Cloud Functions) process data on our behalf.</li>
+      <li><strong>No sale of personal data:</strong> PetCare does not sell your personal information.</li>
+    </ul>
+
+    <h3>Data Retention and Deletion</h3>
+    <ul>
+      <li>Data is kept while needed to provide the app experience and shared pet functionality.</li>
+      <li>The app includes a device account reset flow that removes local data and attempts to remove associated cloud records, memberships, device tokens, and authored safety reports.</li>
+      <li>Owners can delete pets, which removes the related pet records (including members, invites, and to-do entries) from the backend.</li>
+    </ul>
+
+    <h3>Your Choices</h3>
+    <ul>
+      <li>You can choose whether to add a pet photo.</li>
+      <li>You can manage notification permissions in iOS Settings.</li>
+      <li>You can stop using the app and clear data through in-app reset and deletion options where available.</li>
+    </ul>
+
+    <h3>Children</h3>
+    <p>PetCare is not intended for children to use without a parent or guardian.</p>
+
+    <h3>Changes to This Policy</h3>
+    <p>We may update this Privacy Policy from time to time. Updated versions will be posted on this page with a revised date.</p>
+
+    <h3>Contact</h3>
+    <p>If you have privacy questions or requests, contact the PetCare support team through your official app support channel.</p>
+  </section>
+  <script>
+    const readPolicyButton = document.getElementById("read-policy-btn");
+    const policySection = document.getElementById("privacy-policy");
+
+    if (readPolicyButton && policySection) {
+      readPolicyButton.addEventListener("click", () => {
+        policySection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  </script>
+</body>
+</html>
