@@ -65,12 +65,22 @@
     }
 
     .read-button {
+      transition: all 0.2s ease;
+      box-shadow:
+    0 10px 25px rgba(94, 161, 245, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
     height: 58px;
     padding: 1em 2em;
     border-radius: 35px;
     border: none;
     color: white;
-    background: #73aff6;
+    background: linear-gradient(
+    180deg,
+    #8fc1ff 0%,
+    #5ea1f5 100%
+    
+  );
+
     font-size: 1em;
     font-weight: 500;
     cursor: pointer;
@@ -209,6 +219,24 @@
       color: #2f3846
     }
 
+    .site-footer {
+      max-width: 900px;
+      margin: 24px auto 48px;
+      padding: 0 24px;
+      color: #2f3846;
+      text-align: center;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-footer a {
+      color: #2f3846;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     @media (max-width: 800px) {
       .cards {
         width: 100%;
@@ -345,16 +373,47 @@
     <p>We may update this Privacy Policy from time to time. Updated versions will be posted on this page with a revised date.</p>
 
     <h3>Contact</h3>
-    <p>If you have privacy questions or requests, contact the PetCare support team through your official app support channel.</p>
+    <p>If you have privacy questions or requests, email <a href="mailto:pawtails@gmail.com">pawtailsapp@gmail.com</a>.</p>
   </section>
+  <footer class="site-footer">
+    Contact: <a href="mailto:pawtailsapp@gmail.com">pawtailsapp@gmail.com</a>
+  </footer>
   <script>
     const readPolicyButton = document.getElementById("read-policy-btn");
     const policySection = document.getElementById("privacy-policy");
+    const privacyPath = "/privacy";
+    const homePath = "/";
+
+    const setPath = (path) => {
+      if (window.location.pathname !== path) {
+        window.history.replaceState({}, "", path);
+      }
+    };
 
     if (readPolicyButton && policySection) {
       readPolicyButton.addEventListener("click", () => {
         policySection.scrollIntoView({ behavior: "smooth", block: "start" });
       });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setPath(privacyPath);
+            } else {
+              setPath(homePath);
+            }
+          },
+          { threshold: 0.2 }
+        );
+        observer.observe(policySection);
+      }
+
+      if (window.location.pathname === privacyPath) {
+        window.requestAnimationFrame(() => {
+          policySection.scrollIntoView({ behavior: "auto", block: "start" });
+        });
+      }
     }
   </script>
 </body>
