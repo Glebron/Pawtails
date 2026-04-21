@@ -1,73 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PawTails | Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header class="header">
-    <div class="site-shell topbar">
-      <a class="logo" href="/">PawTails<small>pet routine studio</small></a>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/features">Features</a>
-        <a class="nav-link" href="/art">Art</a>
-        <a class="nav-link" href="/about">About</a>
-      </nav>
-      <a class="cta" href="/privacy">Privacy</a>
-    </div>
+<body class="home-page">
+  <header class="top-header">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/privacy" class="nav-link">Privacy policy</a>
+      <a href="/about" class="nav-link">About us</a>
+    </nav>
   </header>
 
-  <main class="site-shell">
-    <section class="hero">
-      <div class="hero-stage reveal">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow hero-eyebrow">PawTails Experience</p>
-            <h1 class="hero-title"><span class="script">Create</span> a schedule for your dog</h1>
-            <p class="lead hero-lead">A premium product story with your art and app UI presented in a confident, App Store-ready landing layout.</p>
-            <div class="hero-actions">
-              <a class="cta" href="/art">See your art page</a>
-              <a class="link-button hero-link" href="/features">Explore features</a>
-            </div>
-          </div>
-          <figure class="hero-banner-shell">
-            <img src="3900.png" alt="PawTails app screens" class="hero-banner-image" onerror="this.onerror=null;this.src='banner.png';" />
-          </figure>
-        </div>
-      </div>
+  <main class="hero-shell">
+    <section class="hero-left">
+      <h1 class="brand">PawTails</h1>
+      <p class="tagline">Track daily tasks, keep streaks, and stay in sync with family - all in one calm app.</p>
+      <a class="store-button" href="#" aria-label="Download on the App Store">
+        <span class="apple">&#63743;</span>
+        <span class="store-text">
+          <span class="small">Download on the</span>
+          <span class="big">App Store</span>
+        </span>
+      </a>
     </section>
 
-    <section class="stat-grid">
-      <article class="stat reveal"><strong>5</strong>Core pages</article>
-      <article class="stat reveal"><strong>7</strong>Visual assets used</article>
-      <article class="stat reveal"><strong>100%</strong>Mobile responsive</article>
+    <section class="hero-right" aria-hidden="true">
+      <img src="banner.png" alt="" class="phones" />
     </section>
-
-    <section class="feature-grid page-block">
-      <article class="feature reveal">
-        <h3>Multi-page structure</h3>
-        <p class="muted">Separate routes for home, features, art, about, and privacy improve trust and navigation.</p>
-      </article>
-      <article class="feature reveal">
-        <h3>App presentation</h3>
-        <p class="muted">Show exactly what your app does with visual cards and clear copy for App Review and users.</p>
-      </article>
-      <article class="feature reveal">
-        <h3>Brand personality</h3>
-        <p class="muted">Warm palette, custom fonts, and handcrafted sections make it feel like your own product.</p>
-      </article>
-    </section>
-
-    <footer class="footer">
-      <span>Contact: <a href="mailto:pawtails@proton.me">pawtails@proton.me</a></span>
-      <span>Last updated: April 21, 2026</span>
-    </footer>
   </main>
 
   <script src="app.js"></script>
