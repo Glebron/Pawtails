@@ -27,3 +27,23 @@ if ("IntersectionObserver" in window) {
 } else {
   document.querySelectorAll(".reveal").forEach((item) => item.classList.add("visible"));
 }
+
+const heroStage = document.querySelector(".hero-stage");
+const heroBannerImage = document.querySelector(".hero-banner-image");
+
+if (heroStage && heroBannerImage) {
+  const maxShift = 12;
+
+  heroStage.addEventListener("mousemove", (event) => {
+    const rect = heroStage.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+    const tx = px * maxShift;
+    const ty = py * maxShift * 0.5;
+    heroBannerImage.style.transform = `scale(1.04) translate(${tx}px, ${ty}px)`;
+  });
+
+  heroStage.addEventListener("mouseleave", () => {
+    heroBannerImage.style.transform = "scale(1.04) translate(0, 0)";
+  });
+}

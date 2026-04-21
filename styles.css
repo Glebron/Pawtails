@@ -150,6 +150,25 @@ a {
   padding: clamp(38px, 7vw, 74px) 0 24px;
 }
 
+.hero-stage {
+  border-radius: 44px;
+  padding: clamp(28px, 4vw, 44px);
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(900px 420px at 14% 6%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 64%),
+    linear-gradient(180deg, #72a9ea 0%, #8eb9ee 65%, #b7cff0 100%);
+  box-shadow: 0 30px 70px rgba(67, 116, 170, 0.3);
+}
+
+.hero-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.06fr 0.94fr;
@@ -157,21 +176,59 @@ a {
   align-items: center;
 }
 
+.hero-copy {
+  max-width: 540px;
+  padding-left: clamp(6px, 2vw, 20px);
+}
+
+.hero-title {
+  color: #f7fbff;
+  text-shadow: 0 14px 35px rgba(20, 57, 96, 0.25);
+}
+
+.script {
+  display: block;
+  font-family: "Pacifico", cursive;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hero-eyebrow {
+  color: rgba(244, 250, 255, 0.88);
+}
+
+.hero-lead {
+  color: rgba(238, 246, 255, 0.93);
+}
+
+.hero-link {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #f6fbff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
 .hero-banner-shell {
   margin: 0;
-  min-height: clamp(480px, 72vh, 840px);
-  border-radius: 42px;
+  min-height: clamp(520px, 76vh, 940px);
+  border-radius: 36px;
   overflow: hidden;
-  border: 1px solid rgba(38, 72, 105, 0.18);
-  box-shadow: 0 24px 56px rgba(47, 102, 157, 0.26);
+  border: 1px solid rgba(35, 70, 108, 0.22);
+  box-shadow: 0 24px 56px rgba(42, 87, 135, 0.35);
   background: linear-gradient(180deg, #6da4e2 0%, #c1d7f5 100%);
+  transform: translateX(22px);
+  animation: floatBanner 8s ease-in-out infinite;
 }
 
 .hero-banner-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 66% center;
+  object-position: 70% center;
+  transform: scale(1.04);
+  transition: transform 420ms ease;
+  will-change: transform;
 }
 
 .eyebrow {
@@ -332,6 +389,16 @@ a {
   animation: revealUp 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+@keyframes floatBanner {
+  0%,
+  100% {
+    transform: translateX(22px) translateY(0);
+  }
+  50% {
+    transform: translateX(22px) translateY(-8px);
+  }
+}
+
 @keyframes revealUp {
   from {
     opacity: 0;
@@ -370,12 +437,24 @@ a {
     padding-top: 26px;
   }
 
+  .hero-stage {
+    border-radius: 28px;
+    padding: 24px 18px;
+  }
+
   .hero-banner-shell {
-    min-height: 440px;
+    min-height: 460px;
     max-height: 66vh;
+    transform: none;
+    animation: none;
   }
 
   .hero-banner-image {
     object-position: center top;
+    transform: scale(1.02);
+  }
+
+  .script {
+    margin-bottom: 4px;
   }
 }
