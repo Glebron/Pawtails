@@ -19,7 +19,12 @@ body {
 body {
   font-family: "Poppins", "Avenir Next", sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, #68a2ea 0%, #a8c6ee 100%);
+  background: linear-gradient(180deg, #64A9FF 22%, #C6DFFF 100%);
+}
+
+body.home-page {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .top-header {
@@ -32,14 +37,17 @@ body {
   display: flex;
   gap: clamp(24px, 5vw, 88px);
   align-items: center;
+  padding-left: 8em;
 }
+
 
 .nav-link {
   color: var(--ink-soft);
   text-decoration: none;
-  font-size: clamp(1.05rem, 2vw, 2.95rem);
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 400;
 }
+
 
 .nav-link.active {
   text-decoration: underline;
@@ -50,7 +58,7 @@ body {
 .hero-shell {
   width: min(1200px, 92vw);
   margin: 0 auto;
-  min-height: calc(100vh - 140px);
+  height: calc(100vh - 140px);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
@@ -60,12 +68,13 @@ body {
 
 .hero-left {
   max-width: 680px;
+  padding-left: 7em;
 }
 
 .brand {
   margin: 0;
   font-family: "Pacifico", cursive;
-  font-size: clamp(3.4rem, 7.5vw, 8.2rem);
+  font-size: 5em;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.01em;
@@ -73,11 +82,10 @@ body {
 
 .tagline {
   margin: clamp(22px, 2.8vw, 34px) 0 0;
-  font-size: clamp(1.2rem, 2.3vw, 3.15rem);
+  font-size:1em;
   line-height: 1.28;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ink-soft);
-  max-width: 22ch;
 }
 
 .store-button {
@@ -115,20 +123,16 @@ body {
 }
 
 .hero-right {
-  min-height: 100%;
-  display: flex;
-  align-items: end;
-  justify-content: end;
+  align-self: stretch;
+  position: relative;
   overflow: hidden;
+  bottom: -9.5em;
 }
 
-.phones {
-  width: clamp(470px, 54vw, 880px);
-  max-width: none;
-  transform: translateX(16%) translateY(3%);
-  animation: phoneFloat 8s ease-in-out infinite;
-}
+.banner {
 
+  width: 30em;
+}
 .content-page {
   width: min(1000px, 92vw);
   margin: 56px auto;
@@ -169,6 +173,7 @@ body {
   .hero-shell {
     grid-template-columns: 1fr;
     align-items: start;
+    height: auto;
     min-height: auto;
     padding-bottom: 40px;
   }
