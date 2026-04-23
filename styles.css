@@ -261,6 +261,8 @@ body.home-page {
 @media (max-width: 1140px) {
   body.home-page {
     height: auto;
+    max-height: 100vh;
+    overflow: hidden;
   }
   .brand {
     margin: 0;
