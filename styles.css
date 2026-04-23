@@ -81,12 +81,34 @@ body.home-page {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+.routine-icon-title {
+  max-width: 3em;
+    margin: 0 1em;
+    padding-bottom: 0.5em;
+}
+
+.food-icon-title {
+  max-width: 6em;
+  padding-bottom: 0.5em;
+}
+
+.title-container {
+  display: flex;
+    align-items: center;
+}
+
+.content-title {
+  display: flex;
+    align-items: center;
+}
+
 
 .nav-link {
   color: var(--ink-soft);
   text-decoration: none;
   font-size: 1em;
   font-weight: 400;
+  font-family: sans-serif;
 }
 
 
@@ -128,6 +150,7 @@ body.home-page {
   line-height: 1.28;
   font-weight: 400;
   color: var(--ink-soft);
+  font-family: sans-serif;
 }
 
 .store-button {
@@ -193,7 +216,6 @@ body.home-page {
 
 .content-card {
   background: var(--panel);
-  border: 1px solid var(--panel-border);
   border-radius: 22px;
   padding: clamp(20px, 4vw, 36px);
   backdrop-filter: blur(3px);
@@ -207,10 +229,22 @@ body.home-page {
 
 .policy-card {
   max-width: 880px;
+
 }
 
 .about-card {
   max-width: 880px;
+  background: rgb(158 207 255 / 16%);
+}
+
+.about-photo {
+  width: min(100%, 560px);
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto 22px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .policy-meta {
@@ -223,6 +257,12 @@ body.home-page {
   font-weight: 600;
 }
 
+.policy-subheading {
+  margin: 14px 0 8px;
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  font-weight: 600;
+}
+
 .policy-list {
   margin: 0;
   padding-left: 22px;
@@ -232,9 +272,12 @@ body.home-page {
   margin-top: 8px;
 }
 
+.privacy-page {
+  background: linear-gradient(180deg, #64A9FF 22%, #a0caff 100%)
+}
+
 .privacy-page .policy-card {
-  background: linear-gradient(180deg, rgba(80, 132, 206, 0.72) 0%, rgba(67, 114, 183, 0.82) 100%);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(180deg, rgb(156 197 255 / 54%) 0%, #64a9ff 100%)
 }
 
 .privacy-page .policy-card,
@@ -367,6 +410,7 @@ body.home-page {
 
   .nav-link {
     font-size: 1rem;
+    font-family: sans-serif;
   }
 }
 
