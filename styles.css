@@ -23,7 +23,7 @@ body {
 }
 
 body.home-page {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .top-header {
