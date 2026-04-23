@@ -382,12 +382,12 @@ body.home-page {
 @media (max-width: 650px) {
 
   .banner{
-    width: 95%;
+    width: 92%;
   }
   .hero-right {
     justify-content: center;
     display: flex;
-    bottom: -2em;
+    bottom: -0em;
 }
 
 }
