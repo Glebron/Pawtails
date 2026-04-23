@@ -19,9 +19,13 @@ body {
 body {
   font-family: "Poppins", "Avenir Next", sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, #fa64ff 22%, #C6DFFF 100%);
+  background: linear-gradient(180deg, #64A9FF 22%, #C6DFFF 100%);
 }
 
+body.home-page {
+  height: 100vh;
+  overflow-y: hidden;
+}
 
 .top-header {
   width: min(1200px, 92vw);
@@ -255,7 +259,9 @@ body {
 }
 
 @media (max-width: 1140px) {
-
+  body.home-page {
+    height: auto;
+  }
   .brand {
     margin: 0;
     font-family: "Pacifico", cursive;
