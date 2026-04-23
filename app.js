@@ -1,9 +1,19 @@
-const path = window.location.pathname.replace(/\/$/, "") || "/";
+const normalizePath = (pathname) => {
+  if (!pathname) return "/";
+  let normalized = pathname.replace(/\/+$/, "");
+  if (normalized === "") return "/";
+  normalized = normalized.replace(/\/index\.html$/i, "/");
+  normalized = normalized.replace(/\.html$/i, "");
+  return normalized === "" ? "/" : normalized;
+};
+
+const currentPath = normalizePath(window.location.pathname);
 
 for (const link of document.querySelectorAll(".nav-link")) {
   const href = link.getAttribute("href");
   if (!href) continue;
-  if ((href === "/" && path === "/") || (href !== "/" && path === href)) {
+  const linkPath = normalizePath(new URL(href, window.location.href).pathname);
+  if (linkPath === currentPath) {
     link.classList.add("active");
   }
 }

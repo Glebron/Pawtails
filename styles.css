@@ -168,12 +168,12 @@ body.home-page {
   align-self: stretch;
   position: relative;
   overflow: hidden;
-  bottom: -9.5em;
+  bottom: -25.5em;
 }
 
-.banner {
 
-  width: 30em;
+.banner {
+  width: 100%;
 }
 .content-page {
   width: min(1000px, 92vw);
@@ -201,6 +201,53 @@ body.home-page {
   color: white;
 }
 
+.policy-card {
+  max-width: 880px;
+}
+
+.about-card {
+  max-width: 880px;
+}
+
+.policy-meta {
+  margin-top: 0;
+}
+
+.policy-heading {
+  margin: 28px 0 8px;
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  font-weight: 600;
+}
+
+.policy-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.policy-list li + li {
+  margin-top: 8px;
+}
+
+.privacy-page .policy-card {
+  background: linear-gradient(180deg, rgba(80, 132, 206, 0.72) 0%, rgba(67, 114, 183, 0.82) 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.privacy-page .policy-card,
+.privacy-page .policy-list {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.privacy-page .policy-heading {
+  color: #ffffff;
+}
+
+.privacy-page .policy-card a {
+  color: #ffffff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 @keyframes phoneFloat {
   0%,
   100% {
@@ -212,6 +259,9 @@ body.home-page {
 }
 
 @media (max-width: 1140px) {
+  body.home-page {
+    height: auto;
+  }
   .brand {
     margin: 0;
     font-family: "Pacifico", cursive;
@@ -238,7 +288,11 @@ body.home-page {
   .hero-right {
     justify-content: center;
     display: flex;
-    bottom: 4em;
+    bottom: -7em;
+  }
+
+  .hero-right img{
+    width: 65%;
   }
 
   .phones {
@@ -313,11 +367,14 @@ body.home-page {
 
 @media (max-width: 850px) {
   .hero-right {
-    bottom: 4em;
+    bottom: -11em;
+  }
+
+  .hero-right img{
+    width: 75%;
   }
 
   .banner {
     width: 20em;
   }
 }
-
