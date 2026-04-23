@@ -259,9 +259,7 @@ body.home-page {
 }
 
 @media (max-width: 1140px) {
-  body.home-page {
-    height: auto;
-  }
+
   .brand {
     margin: 0;
     font-family: "Pacifico", cursive;
