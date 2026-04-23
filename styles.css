@@ -397,7 +397,7 @@ body.home-page {
 @media (max-width: 500px) {
  
 .banner {
-  bottom: -50%;
+  bottom: -200%;
   width: 100% !important;
   max-width:none !important;
 }
