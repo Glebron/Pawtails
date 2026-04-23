@@ -278,6 +278,7 @@ body.home-page {
     width: 40%;
     min-width: auto;
     min-width: 500px;
+    bottom: -15em;
   }
   .tagline {
     max-width: 80%;
@@ -295,7 +296,7 @@ body.home-page {
   .hero-right {
     justify-content: center;
     display: flex;
-    bottom: 5%;
+    bottom: 0;
     overflow: unset;
   }
 
@@ -377,7 +378,7 @@ body.home-page {
   .hero-right {
     justify-content: center;
     display: flex;
-    bottom: 5%;
+    bottom: 0;
   }
  
 }
@@ -392,7 +393,7 @@ body.home-page {
   .hero-right {
     justify-content: center;
     display: flex;
-    bottom: -2%;
+    bottom: 0;
 }
 
 }
