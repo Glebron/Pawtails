@@ -260,8 +260,7 @@ body.home-page {
 
 @media (max-width: 1140px) {
   body.home-page {
-    height: auto;
-    max-height: 100vh;
+  
     overflow: hidden;
   }
   .brand {
@@ -377,6 +376,7 @@ body.home-page {
     display: flex;
     bottom: -4em;
   }
+
 }
 
 @media (max-width: 650px) {
