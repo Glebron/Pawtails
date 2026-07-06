@@ -1,0 +1,4 @@
+/insights /404.html 404
+/insights/* /404.html 404
+/review-demo.mp4 /404.html 404
+
