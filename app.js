@@ -74,3 +74,18 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+for (const stage of document.querySelectorAll("[data-tilt-stage]")) {
+  stage.addEventListener("pointermove", (event) => {
+    const bounds = stage.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    stage.style.setProperty("--tilt-y", `${x * 4}deg`);
+    stage.style.setProperty("--tilt-x", `${y * -4}deg`);
+  });
+
+  stage.addEventListener("pointerleave", () => {
+    stage.style.setProperty("--tilt-y", "0deg");
+    stage.style.setProperty("--tilt-x", "0deg");
+  });
+}
