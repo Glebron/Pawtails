@@ -254,40 +254,48 @@ h3 {
 
 .hero-art {
   position: relative;
-  min-height: 620px;
+  min-height: 600px;
   display: grid;
   place-items: center;
 }
 
 .device-stack {
   position: relative;
-  width: min(100%, 500px);
-  min-height: 600px;
+  width: min(100%, 520px);
+  min-height: 580px;
 }
 
-.phone-frame {
+.phone-frame,
+.tablet-frame {
   position: absolute;
   overflow: hidden;
   margin: 0;
-  padding: 18px 12px 12px;
-  border-radius: 42px;
   background: linear-gradient(180deg, #ffffff, #eef7ff);
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 30px 90px rgba(55, 111, 164, 0.24);
 }
 
-.phone-frame-main {
-  top: 0;
-  right: 18px;
-  width: min(74%, 330px);
-  transform: rotate(3deg);
+.phone-frame {
+  padding: 18px 12px 12px;
+  border-radius: 42px;
 }
 
-.phone-frame-side {
+.phone-frame-main {
+  top: 26px;
   left: 0;
-  bottom: 8px;
-  width: min(63%, 285px);
-  transform: rotate(-4deg);
+  z-index: 2;
+  width: min(64%, 318px);
+  transform: rotate(-3deg);
+}
+
+.tablet-frame {
+  right: 0;
+  bottom: 18px;
+  z-index: 1;
+  width: min(72%, 380px);
+  padding: 16px;
+  border-radius: 34px;
+  transform: rotate(2deg);
 }
 
 .phone-speaker {
@@ -299,71 +307,31 @@ h3 {
   background: #c5d7e9;
 }
 
-.phone-frame img {
+.tablet-camera {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #c5d7e9;
+}
+
+.phone-frame img,
+.tablet-frame img {
   display: block;
   width: 100%;
-  aspect-ratio: 1170 / 2532;
   object-fit: cover;
   object-position: top center;
+}
+
+.phone-frame img {
+  aspect-ratio: 416 / 900;
   border-radius: 30px;
 }
 
-.app-mock-screen {
-  min-height: 440px;
-  padding: 22px 18px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, #eef8ff, #fbfdff);
-}
-
-.mock-status {
-  margin-bottom: 24px;
-}
-
-.mock-status span,
-.mock-status strong {
-  display: block;
-}
-
-.mock-status span {
-  color: #7a92a8;
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.mock-status strong {
-  margin-top: 4px;
-  font-size: 1.35rem;
-}
-
-.mock-task {
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px;
-  border-radius: 22px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  box-shadow: 0 16px 36px rgba(70, 122, 174, 0.1);
-}
-
-.mock-task + .mock-task {
-  margin-top: 14px;
-}
-
-.mock-task.done {
-  background: #eef8ff;
-}
-
-.mock-task strong {
-  display: block;
-  font-size: 1rem;
-}
-
-.mock-task p {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.88rem;
+.tablet-frame img {
+  aspect-ratio: 834 / 1200;
+  border-radius: 24px;
 }
 
 .task-dot {
@@ -384,22 +352,6 @@ h3 {
 
 .task-dot.water {
   background: linear-gradient(135deg, #8fd7ff, #d9f4ff);
-}
-
-.mock-assignees {
-  margin-top: 24px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.mock-assignees span {
-  padding: 9px 12px;
-  border-radius: 999px;
-  color: #2b5a83;
-  background: #edf7ff;
-  font-size: 0.82rem;
-  font-weight: 800;
 }
 
 .section-band,
@@ -793,11 +745,11 @@ h3 {
   }
 
   .hero-art {
-    min-height: 560px;
+    min-height: 540px;
   }
 
   .device-stack {
-    min-height: 540px;
+    min-height: 520px;
   }
 
   .feature-grid {
@@ -833,6 +785,7 @@ h3 {
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+    margin-top: 24px;
   }
 
   .app-store-badge {
@@ -840,26 +793,41 @@ h3 {
     max-width: 220px;
   }
 
+  .hero-section {
+    gap: 18px;
+    padding-top: 12px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.25rem, 16vw, 4.2rem);
+  }
+
+  .hero-text {
+    margin-top: 20px;
+    font-size: 1.04rem;
+    line-height: 1.5;
+  }
+
   .hero-art {
-    min-height: 520px;
+    min-height: 480px;
   }
 
   .device-stack {
-    min-height: 500px;
+    min-height: 460px;
   }
 
   .phone-frame-main {
+    top: 8px;
+    left: 0;
+    width: 58%;
+  }
+
+  .tablet-frame {
     right: 0;
-    width: 72%;
-  }
-
-  .phone-frame-side {
-    width: 60%;
-  }
-
-  .app-mock-screen {
-    min-height: 360px;
-    padding: 18px 14px;
+    bottom: 18px;
+    width: 66%;
+    padding: 12px;
+    border-radius: 28px;
   }
 
   .assignment-row {
