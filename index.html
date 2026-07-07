@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260707b" />
+  <link rel="stylesheet" href="styles.css?v=20260707c" />
 </head>
 <body>
   <header class="site-header">
@@ -50,30 +50,39 @@
       </div>
 
       <div class="hero-art reveal" aria-label="PawTails app preview">
-        <div class="icon-orbit">
-          <img src="pawtails-icon.png" alt="PawTails app icon" class="hero-icon" />
-        </div>
-        <div class="phone-preview">
-          <div class="phone-top"></div>
-          <div class="phone-card active">
-            <span class="task-dot"></span>
-            <div>
-              <strong>Feeding</strong>
-              <p>Done by Alice at 8:14</p>
+        <div class="device-stack">
+          <figure class="phone-frame phone-frame-main">
+            <span class="phone-speaker"></span>
+            <img src="app-screen-home.png" alt="PawTails Today screen showing routine cards and household navigation" />
+          </figure>
+          <figure class="phone-frame phone-frame-side" aria-label="PawTails assignment preview">
+            <span class="phone-speaker"></span>
+            <div class="app-mock-screen">
+              <div class="mock-status">
+                <span>Luna care</span>
+                <strong>Today</strong>
+              </div>
+              <div class="mock-task done">
+                <span class="task-dot"></span>
+                <div>
+                  <strong>Feeding</strong>
+                  <p>Done by Alice at 8:14</p>
+                </div>
+              </div>
+              <div class="mock-task assigned">
+                <span class="task-dot walk"></span>
+                <div>
+                  <strong>Morning walk</strong>
+                  <p>Assigned to You</p>
+                </div>
+              </div>
+              <div class="mock-assignees">
+                <span>You</span>
+                <span>Alice</span>
+                <span>Mom</span>
+              </div>
             </div>
-          </div>
-          <div class="phone-card">
-            <span class="task-dot walk"></span>
-            <div>
-              <strong>Morning walk</strong>
-              <p>Assigned to You</p>
-            </div>
-          </div>
-          <div class="member-row">
-            <span>You</span>
-            <span>Alice</span>
-            <span>Mom</span>
-          </div>
+          </figure>
         </div>
       </div>
     </section>
@@ -99,6 +108,43 @@
           <h3>See attribution clearly</h3>
           <p>Completed tasks show who handled them, helping prevent double-feeding and missed routines.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="assignment-section reveal">
+      <div>
+        <p class="eyebrow">Assignments</p>
+        <h2>Make it obvious who is handling each care task.</h2>
+        <p>
+          Assign walks, feeding, water, play, medicine, and custom reminders to a household member.
+          Everyone can see what is theirs, what is done, and who completed it.
+        </p>
+      </div>
+      <div class="assignment-board" aria-label="PawTails assignment examples">
+        <div class="assignment-row">
+          <span class="task-dot walk"></span>
+          <div>
+            <strong>Morning walk</strong>
+            <p>Assigned to You</p>
+          </div>
+          <span class="assignment-chip">Today</span>
+        </div>
+        <div class="assignment-row">
+          <span class="task-dot food"></span>
+          <div>
+            <strong>Dinner</strong>
+            <p>Assigned to Mom</p>
+          </div>
+          <span class="assignment-chip">6:30</span>
+        </div>
+        <div class="assignment-row completed">
+          <span class="task-dot water"></span>
+          <div>
+            <strong>Fresh water</strong>
+            <p>Done by Alice</p>
+          </div>
+          <span class="assignment-chip">Done</span>
+        </div>
       </div>
     </section>
 
