@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PawTails | Home</title>
+  <meta name="description" content="PawTails helps families coordinate daily dog care with private households, QR invites, roles, and shared reminders." />
+  <title>PawTails | Dog care together</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="home-page">
-  <header class="top-header">
+<body>
+  <header class="site-header">
+    <a class="brand-lockup" href="/" aria-label="PawTails home">
+      <img src="pawtails-icon.png" alt="" class="brand-icon" />
+      <span class="brand-word">PawTails</span>
+    </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
       <span class="menu-toggle-bar"></span>
       <span class="menu-toggle-bar"></span>
@@ -18,28 +23,132 @@
     </button>
     <nav class="top-nav" id="main-nav" aria-label="Main navigation">
       <a href="/" class="nav-link">Home</a>
-      <a href="/privacy/" class="nav-link">Privacy policy</a>
-      <a href="/about/" class="nav-link">About us</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/privacy/" class="nav-link">Privacy</a>
     </nav>
   </header>
 
-  <main class="hero-shell">
-    <section class="hero-left">
-      <h1 class="brand">PawTails</h1>
-      <p class="tagline">Track daily tasks, keep streaks, and stay in sync with family - all in one calm App.</p>
-      <a class="store-button" href="#" aria-label="Download on the App Store">
-        <span class="apple">&#63743;</span>
-        <span class="store-text">
-          <span class="small">Download on the</span>
-          <span class="big">App Store</span>
+  <main>
+    <section class="hero-section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Shared dog care for families</p>
+        <h1>PawTails</h1>
+        <p class="hero-text">
+          Coordinate feeding, walks, water, play, and medicine with everyone who helps care for your dog.
+          PawTails keeps the household in sync so no one has to guess what has already been done.
+        </p>
+        <div class="hero-actions">
+          <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+            <span class="apple-mark">&#63743;</span>
+            <span>
+              <span class="badge-kicker">Download on the</span>
+              <span class="badge-title">App Store</span>
+            </span>
+          </a>
+          <a class="secondary-link" href="#how-it-works">See how it works</a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" aria-label="PawTails app preview">
+        <div class="icon-orbit">
+          <img src="pawtails-icon.png" alt="PawTails app icon" class="hero-icon" />
+        </div>
+        <div class="phone-preview">
+          <div class="phone-top"></div>
+          <div class="phone-card active">
+            <span class="task-dot"></span>
+            <div>
+              <strong>Feeding</strong>
+              <p>Done by Alice at 8:14</p>
+            </div>
+          </div>
+          <div class="phone-card">
+            <span class="task-dot walk"></span>
+            <div>
+              <strong>Morning walk</strong>
+              <p>Assigned to You</p>
+            </div>
+          </div>
+          <div class="member-row">
+            <span>You</span>
+            <span>Alice</span>
+            <span>Mom</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" id="how-it-works">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Built around households</p>
+        <h2>Know who cared for your dog today.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <span class="feature-icon">01</span>
+          <h3>Create a private household</h3>
+          <p>Keep your dog, schedule, reminders, and completed tasks in one shared space for the people you invite.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-icon">02</span>
+          <h3>Invite with a QR code</h3>
+          <p>Bring in family, partners, roommates, or sitters with private invite links and role-based access.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-icon">03</span>
+          <h3>See attribution clearly</h3>
+          <p>Completed tasks show who handled them, helping prevent double-feeding and missed routines.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split-section">
+      <div class="soft-panel reveal">
+        <p class="eyebrow">Everyday coordination</p>
+        <h2>Simple enough for daily use. Detailed enough for shared care.</h2>
+        <p>
+          PawTails focuses on the small handoffs that happen every day: who fed the dog, who walked her,
+          when water was changed, and what still needs attention.
+        </p>
+      </div>
+      <div class="stats-list reveal">
+        <div>
+          <strong>Roles</strong>
+          <span>Owner, editor, and viewer access for household members.</span>
+        </div>
+        <div>
+          <strong>Sync</strong>
+          <span>Updates travel across devices so the whole household sees the same care status.</span>
+        </div>
+        <div>
+          <strong>Privacy</strong>
+          <span>No email/password account required for the core device-based experience.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="download-section reveal">
+      <img src="pawtails-icon.png" alt="" class="download-icon" />
+      <h2>Dog care works better together.</h2>
+      <p>Download PawTails and give your household one calm place for daily care.</p>
+      <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+        <span class="apple-mark">&#63743;</span>
+        <span>
+          <span class="badge-kicker">Download on the</span>
+          <span class="badge-title">App Store</span>
         </span>
       </a>
     </section>
-
-    <section class="hero-right" aria-hidden="true">
-      <img src="banner.png" alt="" class="banner" />
-    </section>
   </main>
+
+  <footer class="site-footer">
+    <span>PawTails</span>
+    <nav aria-label="Footer navigation">
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="mailto:pawtails@proton.me">Contact</a>
+    </nav>
+  </footer>
 
   <script src="app.js"></script>
 </body>

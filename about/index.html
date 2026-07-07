@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PawTails | About us</title>
+  <meta name="description" content="Learn about PawTails, a dog-care coordination app inspired by real household routines." />
+  <title>PawTails | About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <header class="top-header">
+  <header class="site-header">
+    <a class="brand-lockup" href="/" aria-label="PawTails home">
+      <img src="../pawtails-icon.png" alt="" class="brand-icon" />
+      <span class="brand-word">PawTails</span>
+    </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
       <span class="menu-toggle-bar"></span>
       <span class="menu-toggle-bar"></span>
@@ -18,33 +23,45 @@
     </button>
     <nav class="top-nav" id="main-nav" aria-label="Main navigation">
       <a href="/" class="nav-link">Home</a>
-      <a href="/privacy/" class="nav-link">Privacy policy</a>
-      <a href="/about/" class="nav-link">About us</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/privacy/" class="nav-link">Privacy</a>
     </nav>
   </header>
 
   <main class="content-page">
-    <div class="title-container"><h1 class="content-title">About us</h1> <div>
-      <img class="food-icon-title" src="../food.png" alt="">
-    </div></div>
-    <section class="content-card about-card">
-      <img src="../frida.JPG" alt="Frida the rottweiler resting on the floor" class="about-photo" />
-      <p>
-        PawTails began as a personal idea inspired by my dog, Frida, a rottweiler who quickly became the center of our daily routine.
-        As a software developer, I have always been driven by building practical products with modern technology, and this project grew from that mindset:
-        create a simple, reliable way to turn good intentions into consistent care.
-      </p>
-      <p>
-        Today, PawTails is designed for dog owners who want to take an extra step in caring for their pets.
-        The goal is to make everyday coordination clear across partners and households, so routines stay organized and small mistakes,
-        like accidental double dinners, are easier to avoid.
-      </p>
-      <p>
-        Questions, feedback, or partnership ideas:
-        <a href="mailto:pawtails@proton.me">pawtails@proton.me</a>
-      </p>
+    <section class="page-hero reveal">
+      <p class="eyebrow">About PawTails</p>
+      <h1>Made for the everyday teamwork behind a happy dog.</h1>
+    </section>
+
+    <section class="about-layout">
+      <img src="../frida.JPG" alt="Frida the rottweiler resting on the floor" class="about-photo reveal" />
+      <div class="content-panel reveal">
+        <p>
+          PawTails began as a personal project inspired by Frida, a rottweiler who quickly became the center
+          of the daily routine at home.
+        </p>
+        <p>
+          The app is designed for households where dog care is shared between partners, family, roommates,
+          or sitters. Instead of relying on memory or scattered messages, PawTails gives everyone one place
+          to see what has been done and what still needs care.
+        </p>
+        <p>
+          Questions, feedback, or support:
+          <a href="mailto:pawtails@proton.me">pawtails@proton.me</a>
+        </p>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <span>PawTails</span>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="mailto:pawtails@proton.me">Contact</a>
+    </nav>
+  </footer>
 
   <script src="../app.js"></script>
 </body>

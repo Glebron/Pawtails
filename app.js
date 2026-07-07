@@ -20,7 +20,7 @@ for (const link of document.querySelectorAll(".nav-link")) {
 
 const menuButton = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".top-nav");
-const MOBILE_NAV_BREAKPOINT = 1140;
+const MOBILE_NAV_BREAKPOINT = 900;
 
 if (menuButton && menu) {
   const setMenuState = (isOpen) => {
@@ -54,4 +54,23 @@ if (menuButton && menu) {
   window.addEventListener("resize", () => {
     if (window.innerWidth > MOBILE_NAV_BREAKPOINT) closeMenu();
   });
+}
+
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
