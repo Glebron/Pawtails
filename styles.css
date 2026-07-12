@@ -251,6 +251,11 @@ h3 {
   box-shadow: 0 14px 28px rgba(36, 123, 209, 0.2);
 }
 
+.small-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 .hero-art {
   position: relative;
   min-height: 572px;

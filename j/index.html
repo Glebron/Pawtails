@@ -33,9 +33,36 @@
       <h1 class="content-title">Open in PawTails</h1>
       <p>This private invite opens a shared dog-care household in the PawTails app.</p>
       <p>If the app is installed, use the button below from your iPhone. If it does not open, copy this page link and paste it in PawTails from Household → Join.</p>
-      <p><a class="store-button" href="pawtails://join">Open PawTails</a></p>
+      <p><a class="store-button" id="open-pawtails-invite" href="/">Open PawTails</a></p>
+      <p class="small-note" id="invite-fallback">Copy this page link if the app does not open.</p>
     </section>
   </main>
+  <script>
+    (() => {
+      const pageUrl = new URL(window.location.href);
+      const petId = pageUrl.searchParams.get("petId") || pageUrl.searchParams.get("i") || "";
+      const token = pageUrl.searchParams.get("token") || pageUrl.searchParams.get("t") || "";
+      const openButton = document.getElementById("open-pawtails-invite");
+      const fallback = document.getElementById("invite-fallback");
+
+      if (!openButton || !token) {
+        if (fallback) fallback.textContent = "This invite link is missing its token. Ask the household owner to send a fresh invite.";
+        return;
+      }
+
+      const deepLink = new URL(petId ? "pawtails://join" : "pawtails://j");
+      if (petId) deepLink.searchParams.set("petId", petId);
+      deepLink.searchParams.set("t", token);
+      openButton.href = deepLink.toString();
+      openButton.addEventListener("click", () => {
+        window.setTimeout(() => {
+          if (document.visibilityState === "visible" && fallback) {
+            fallback.textContent = "Still here? Copy this page link and paste it in PawTails from Household -> Join.";
+          }
+        }, 900);
+      });
+    })();
+  </script>
   <script src="/app.js"></script>
 </body>
 </html>
