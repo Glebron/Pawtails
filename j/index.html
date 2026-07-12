@@ -32,7 +32,7 @@
       <p class="eyebrow">Private invite</p>
       <h1 class="content-title">Open in PawTails</h1>
       <p>This private invite opens a shared dog-care household in the PawTails app.</p>
-      <p>If the app is installed, use the button below from your iPhone. If it does not open, copy this page link and paste it in PawTails from Household → Join.</p>
+      <p>If the app is installed, tap the button below from your iPhone. If it does not open, copy this page link and paste it in PawTails from Household → Join.</p>
       <p><a class="store-button invite-open-button" id="open-pawtails-invite" href="/">Open PawTails</a></p>
       <p class="small-note" id="invite-fallback">Copy this page link if the app does not open.</p>
     </section>
@@ -51,19 +51,34 @@
         return;
       }
 
-      const deepLink = new URL(petId ? "pawtails://join" : "pawtails://j");
-      if (petId) deepLink.searchParams.set("petId", petId);
-      deepLink.searchParams.set("t", token);
-      openButton.href = deepLink.toString();
+      const makeDeepLink = (scheme) => {
+        const deepLink = new URL(petId ? `${scheme}://join` : `${scheme}://j`);
+        if (petId) deepLink.searchParams.set("petId", petId);
+        deepLink.searchParams.set("t", token);
+        return deepLink.toString();
+      };
+      const primaryDeepLink = makeDeepLink("pawtails");
+      const fallbackDeepLink = makeDeepLink("petcare");
+      let fallbackTimer;
+      const openApp = (event) => {
+        if (event) event.preventDefault();
+        window.clearTimeout(fallbackTimer);
+        if (fallback) fallback.textContent = "Opening PawTails...";
+        window.location.assign(primaryDeepLink);
+        fallbackTimer = window.setTimeout(() => {
+          if (document.visibilityState === "visible") {
+            window.location.assign(fallbackDeepLink);
+            if (fallback) fallback.textContent = "Still here? Copy this page link and paste it in PawTails from Household -> Join.";
+          }
+        }, 850);
+      };
+      openButton.href = primaryDeepLink;
       openButton.textContent = "Open PawTails";
       openButton.setAttribute("aria-label", "Open PawTails invite in the app");
-      openButton.addEventListener("click", () => {
-        window.setTimeout(() => {
-          if (document.visibilityState === "visible" && fallback) {
-            fallback.textContent = "Still here? Copy this page link and paste it in PawTails from Household -> Join.";
-          }
-        }, 900);
-      });
+      openButton.addEventListener("click", openApp);
+      setTimeout(() => {
+        if (document.visibilityState === "visible") openApp();
+      }, 450);
     })();
   </script>
   <script src="/app.js"></script>
