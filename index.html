@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PawTails helps families coordinate daily dog care with private households, QR invites, roles, and shared reminders." />
-  <title>PawTails | Dog care together</title>
+  <meta name="description" content="PawTails keeps walks, meals, reminders, and handoffs in one shared dog-care routine." />
+  <title>PawTails | Care together</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260707e" />
+  <link rel="stylesheet" href="styles.css?v=20260714d" />
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <a class="brand-lockup" href="/" aria-label="PawTails home">
       <img src="pawtails-icon.png" alt="" class="brand-icon" />
@@ -30,146 +30,64 @@
 
   <main>
     <section class="hero-section">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Shared dog care for families</p>
-        <h1>PawTails</h1>
-        <p class="hero-text">
-          Coordinate feeding, walks, water, play, and medicine with everyone who helps care for your dog.
-          PawTails keeps the household in sync so no one has to guess what has already been done.
-        </p>
-        <div class="hero-actions">
-          <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
-            <span class="apple-mark">&#63743;</span>
-            <span>
-              <span class="badge-kicker">Download on the</span>
-              <span class="badge-title">App Store</span>
-            </span>
-          </a>
-          <a class="secondary-link" href="#how-it-works">See how it works</a>
-        </div>
-      </div>
-
-      <div class="hero-art reveal" aria-label="PawTails app preview">
-        <div class="device-stack" data-tilt-stage>
-          <div class="stage-grid" aria-hidden="true"></div>
-          <figure class="phone-frame phone-frame-main">
-            <span class="phone-speaker"></span>
-            <img src="app-screen-home.png" alt="PawTails Today screen showing routine cards and household navigation" />
-          </figure>
-          <figure class="tablet-frame" aria-label="PawTails QR invite screen preview">
-            <span class="tablet-camera"></span>
-            <img src="app-screen-qr.png" alt="PawTails Household screen showing a QR invite for sharing a pet" />
-          </figure>
-          <div class="stage-caption" aria-hidden="true">
-            <span>Live household sync</span>
-            <strong>QR invites</strong>
-          </div>
-        </div>
+      <picture class="hero-media" aria-hidden="true">
+        <source media="(max-width: 700px)" type="image/webp" srcset="assets/hero-mobile-v8.webp?v=20260715b" />
+        <source media="(max-width: 700px)" srcset="assets/hero-mobile-v8.jpg?v=20260715b" />
+        <img src="assets/hero-desktop-v8.jpg?v=20260715c" alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1>Will you be a dog parent with me?</h1>
+        <p class="hero-text">Share walks, meals, and reminders in one calm routine—so everyone knows your dog is cared for.</p>
+        <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+          <span class="apple-mark" aria-hidden="true">&#63743;</span>
+          <span>
+            <span class="badge-kicker">Download on the</span>
+            <span class="badge-title">App Store</span>
+          </span>
+        </a>
       </div>
     </section>
 
-    <section class="section-band" id="how-it-works">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Built around households</p>
-        <h2>Know who cared for your dog today.</h2>
+    <section class="minimal-info" id="how-it-works">
+      <div class="minimal-heading">
+        <p class="eyebrow">Shared care, made simple</p>
+        <h2>Everything your household needs to stay in sync.</h2>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <span class="feature-icon">01</span>
-          <h3>Create a private household</h3>
-          <p>Keep your dog, schedule, reminders, and completed tasks in one shared space for the people you invite.</p>
-        </article>
-        <article class="feature-card reveal">
-          <span class="feature-icon">02</span>
-          <h3>Invite with a QR code</h3>
-          <p>Bring in family, partners, roommates, or sitters with private invite links and role-based access.</p>
-        </article>
-        <article class="feature-card reveal">
-          <span class="feature-icon">03</span>
-          <h3>See attribution clearly</h3>
-          <p>Completed tasks show who handled them, helping prevent double-feeding and missed routines.</p>
-        </article>
+      <div class="care-list">
+        <div class="care-row">
+          <h3>One shared schedule</h3>
+          <p>Keep walks, meals, water, medicine, and reminders in one place.</p>
+        </div>
+        <div class="care-row">
+          <h3>Clear handoffs</h3>
+          <p>See what’s done, what still needs attention, and who helped.</p>
+        </div>
+        <div class="care-row">
+          <h3>Private household</h3>
+          <p>Invite only the family, partners, roommates, or sitters you trust.</p>
+        </div>
+        <p class="care-closing">The little acts of care are what make a home.</p>
       </div>
     </section>
 
-    <section class="assignment-section reveal">
-      <div>
-        <p class="eyebrow">Assignments</p>
-        <h2>Make it obvious who is handling each care task.</h2>
-        <p>
-          Assign walks, feeding, water, play, medicine, and custom reminders to a household member.
-          Everyone can see what is theirs, what is done, and who completed it.
-        </p>
+    <section class="download-section">
+      <div class="download-inner">
+        <h2>Ready to care together?</h2>
+        <p>Give your household one simple place for the care your dog counts on.</p>
+        <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+          <span class="apple-mark" aria-hidden="true">&#63743;</span>
+          <span>
+            <span class="badge-kicker">Download on the</span>
+            <span class="badge-title">App Store</span>
+          </span>
+        </a>
       </div>
-      <div class="assignment-board" aria-label="PawTails assignment examples">
-        <div class="assignment-row">
-          <span class="task-dot walk"></span>
-          <div>
-            <strong>Morning walk</strong>
-            <p>Assigned to You</p>
-          </div>
-          <span class="assignment-chip">Today</span>
-        </div>
-        <div class="assignment-row">
-          <span class="task-dot food"></span>
-          <div>
-            <strong>Dinner</strong>
-            <p>Assigned to Mom</p>
-          </div>
-          <span class="assignment-chip">6:30</span>
-        </div>
-        <div class="assignment-row completed">
-          <span class="task-dot water"></span>
-          <div>
-            <strong>Fresh water</strong>
-            <p>Done by Alice</p>
-          </div>
-          <span class="assignment-chip">Done</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="split-section">
-      <div class="soft-panel reveal">
-        <p class="eyebrow">Everyday coordination</p>
-        <h2>Simple enough for daily use. Detailed enough for shared care.</h2>
-        <p>
-          PawTails focuses on the small handoffs that happen every day: who fed the dog, who walked her,
-          when water was changed, and what still needs attention.
-        </p>
-      </div>
-      <div class="stats-list reveal">
-        <div>
-          <strong>Roles</strong>
-          <span>Owner, editor, and viewer access for household members.</span>
-        </div>
-        <div>
-          <strong>Sync</strong>
-          <span>Updates travel across devices so the whole household sees the same care status.</span>
-        </div>
-        <div>
-          <strong>Privacy</strong>
-          <span>No email/password account required for the core device-based experience.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="download-section reveal">
-      <img src="pawtails-icon.png" alt="" class="download-icon" />
-      <h2>Dog care works better together.</h2>
-      <p>Download PawTails and give your household one calm place for daily care.</p>
-      <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
-        <span class="apple-mark">&#63743;</span>
-        <span>
-          <span class="badge-kicker">Download on the</span>
-          <span class="badge-title">App Store</span>
-        </span>
-      </a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>PawTails</span>
+    <a class="footer-brand" href="/" aria-label="PawTails home">PawTails</a>
     <nav aria-label="Footer navigation">
       <a href="/about/">About</a>
       <a href="/privacy/">Privacy</a>

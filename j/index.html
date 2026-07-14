@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=20260712a" />
+  <link rel="stylesheet" href="/styles.css?v=20260714d" />
 </head>
-<body>
+<body class="invite-page">
   <header class="site-header">
     <a class="brand-lockup" href="/" aria-label="PawTails home">
       <img src="/pawtails-icon.png" alt="" class="brand-icon" />
@@ -27,10 +27,16 @@
     </nav>
   </header>
 
-  <main class="content-page">
-    <section class="content-panel reveal">
+  <main class="invite-main">
+    <picture class="invite-media" aria-hidden="true">
+        <source media="(max-width: 700px)" type="image/webp" srcset="/assets/hero-mobile-v8.webp?v=20260715b" />
+        <source media="(max-width: 700px)" srcset="/assets/hero-mobile-v8.jpg?v=20260715b" />
+        <img src="/assets/hero-desktop-v8.jpg?v=20260715c" alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="invite-scrim" aria-hidden="true"></div>
+    <section class="content-panel invite-card reveal">
       <p class="eyebrow">Private invite</p>
-      <h1 class="content-title">Open in PawTails</h1>
+      <h1 class="content-title">You’ve been invited to care together.</h1>
       <p>This private invite opens a shared dog-care household in the PawTails app.</p>
       <p>If the app is installed, tap the button below from your iPhone. If it does not open, use the alternate app link or copy this page link and paste it in PawTails from Household → Join.</p>
       <p><a class="store-button invite-open-button" id="open-pawtails-invite" href="/">Open PawTails</a></p>
