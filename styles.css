@@ -328,10 +328,11 @@ button:focus-visible {
 .minimal-info {
   width: min(calc(100% - (var(--gutter) * 2)), 1080px);
   margin: 0 auto;
-  padding: 112px 0;
+  padding: 104px 0;
   display: grid;
-  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+  align-items: center;
+  gap: 72px;
 }
 
 .minimal-heading h2 {
@@ -339,35 +340,68 @@ button:focus-visible {
   color: var(--espresso);
 }
 
+.minimal-intro {
+  max-width: 390px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .care-list {
-  border-top: 1px solid var(--line);
+  padding: 10px 30px 26px;
+  counter-reset: care-item;
+  border: 1px solid rgba(88, 137, 216, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(88, 137, 216, 0.13), transparent 42%),
+    #fffdf9;
+  box-shadow: 0 24px 70px rgba(53, 38, 29, 0.08);
 }
 
 .care-row {
-  padding: 30px 0;
+  padding: 26px 0;
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 44px 150px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
   border-bottom: 1px solid var(--line);
+  counter-increment: care-item;
+}
+
+.care-row::before {
+  content: "0" counter(care-item);
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--functional);
+  background: rgba(88, 137, 216, 0.12);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .care-row h3 {
+  padding-top: 7px;
   color: var(--espresso);
 }
 
 .care-row p {
-  margin: 0;
+  margin: 3px 0 0;
   color: var(--muted);
   font-size: 1rem;
 }
 
 .care-closing {
-  max-width: 530px;
-  margin: 48px 0 0;
+  max-width: none;
+  margin: 24px 0 0 64px;
   color: var(--espresso);
-  font-size: clamp(1.5rem, 2.2vw, 1.75rem);
-  line-height: 1.3;
-  letter-spacing: -0.025em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 .download-section {
@@ -807,14 +841,27 @@ button:focus-visible {
     gap: 40px;
   }
 
+  .care-list {
+    padding: 6px 20px 22px;
+    border-radius: 22px;
+  }
+
   .care-row {
-    padding: 26px 0;
-    grid-template-columns: 1fr;
-    gap: 8px;
+    padding: 24px 0;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 2px 16px;
+  }
+
+  .care-row h3 {
+    padding-top: 7px;
+  }
+
+  .care-row p {
+    grid-column: 2;
   }
 
   .care-closing {
-    margin-top: 40px;
+    margin: 22px 0 0 60px;
   }
 
   .download-section {
