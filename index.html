@@ -3,99 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PawTails keeps walks, meals, reminders, and handoffs in one shared dog-care routine." />
-  <title>PawTails | Care together</title>
+  <title>PawTails · Every walk brings you closer</title>
+  <meta name="description" content="PawTails turns your dog’s walks into two gentle rings, sniff time and walk time, and a map of every street she knows. For iPhone." />
+  <meta property="og:title" content="PawTails · Every walk brings you closer" />
+  <meta property="og:description" content="Two daily rings for sniff and walk time, and a map of every street your dog knows." />
+  <meta property="og:image" content="https://pawtails-app.com/img/screen-walk-saved.webp" />
+  <meta name="theme-color" content="#DCEBFC" />
+  <link rel="icon" href="/pawtails-icon.png" />
+  <link rel="apple-touch-icon" href="/pawtails-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260714d" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css?v=20261026" />
 </head>
-<body class="home-page">
-  <header class="site-header">
-    <a class="brand-lockup" href="/" aria-label="PawTails home">
-      <img src="pawtails-icon.png" alt="" class="brand-icon" />
-      <span class="brand-word">PawTails</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-    </button>
-    <nav class="top-nav" id="main-nav" aria-label="Main navigation">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/about/" class="nav-link">About</a>
-      <a href="/privacy/" class="nav-link">Privacy</a>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-sniff" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#9B87EE" /><stop offset="1" stop-color="#D6CCFB" />
+      </linearGradient>
+      <linearGradient id="g-walk" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#6FAAF0" /><stop offset="1" stop-color="#C2E1FC" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <header class="hero">
+    <nav class="nav wrap" aria-label="Main">
+      <a class="wordmark" href="/">PawTails</a>
+      <div class="nav-links">
+        <a href="#rings">Rings</a>
+        <a href="#world">Dog’s world</a>
+        <a href="#family">Family</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn-small" href="https://apps.apple.com/app/id6759874369">Get the app</a>
+      </div>
     </nav>
+
+    <div class="hero-grid wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Sniff walks, counted for the first time</p>
+        <h1>Every walk brings you closer</h1>
+        <p class="lede">PawTails turns your dog’s walks into two gentle rings, sniff time and walk time, and a map of every street she knows. Shared with everyone who loves her.</p>
+        <div class="cta-row">
+          <a class="store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.5zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <span class="cta-note">For iPhone · iOS 17.2 or later</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <figure class="phone phone-back"><img src="/img/screen-pet.webp" alt="" width="390" height="844" /></figure>
+        <figure class="phone phone-front"><img src="/img/screen-walk-saved.webp" alt="" width="390" height="844" /></figure>
+        <div class="chip chip-sniff"><span class="chip-badge sniff"><svg viewBox="0 0 24 24"><path d="M12.8 19.6A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2M9.8 4.4A2 2 0 1 1 11 8H2"/></svg></span><span><small>Sniff</small><b class="ink-sniff">15 / 15 min</b></span></div>
+        <div class="chip chip-world"><span class="chip-badge"><svg viewBox="0 0 24 24"><path d="M14.1 6.3 9.9 4.2a2 2 0 0 0-1.8 0L3.6 6.5A1 1 0 0 0 3 7.4v12.1a1 1 0 0 0 1.4.9l3.7-1.9a2 2 0 0 1 1.8 0l4.2 2.1a2 2 0 0 0 1.8 0l4.5-2.3a1 1 0 0 0 .6-.9V5.3a1 1 0 0 0-1.4-.9l-3.7 1.9a2 2 0 0 1-1.8 0zM15 6v15M9 3v15"/></svg></span><span><small>New streets</small><b class="ink-accent">+1.2 km</b></span></div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero-section">
-      <picture class="hero-media" aria-hidden="true">
-        <source media="(max-width: 700px)" type="image/webp" srcset="assets/hero-mobile-v8.webp?v=20260715b" />
-        <source media="(max-width: 700px)" srcset="assets/hero-mobile-v8.jpg?v=20260715b" />
-        <img src="assets/hero-desktop-v8.jpg?v=20260715c" alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
-      </picture>
-      <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <h1>Will you parent a dog with me?</h1>
-        <p class="hero-text">Share the little moments of care—and raise a happy dog together.</p>
-        <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
-          <span class="apple-mark" aria-hidden="true">&#63743;</span>
-          <span>
-            <span class="badge-kicker">Download on the</span>
-            <span class="badge-title">App Store</span>
-          </span>
-        </a>
+    <section class="principles">
+      <div class="wrap">
+        <p class="quote">A good walk isn’t measured in steps. <span>It’s measured in sniffs.</span></p>
+        <div class="three">
+          <article class="card-soft">
+            <span class="badge"><svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg></span>
+            <h3>No streaks, no guilt</h3>
+            <p>Rings start fresh every morning. Miss a day and nothing breaks.</p>
+          </article>
+          <article class="card-soft">
+            <span class="badge"><svg viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0ZM14.5 12.5l2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/></svg></span>
+            <h3>Goals that fit her</h3>
+            <p>Set from size and age, so a puppy and a senior each get the right day.</p>
+          </article>
+          <article class="card-soft">
+            <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Private by default</h3>
+            <p>Your route is recorded only during a walk you start.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="minimal-info" id="how-it-works">
-      <div class="minimal-heading">
-        <p class="eyebrow">Care, shared beautifully</p>
-        <h2>One dog. One shared rhythm.</h2>
-        <p class="minimal-intro">PawTails keeps both of you close to every walk, meal, and little moment.</p>
-      </div>
-      <div class="care-list">
-        <div class="care-row">
-          <h3>Plan together</h3>
-          <p>Keep walks, meals, medicine, and reminders in one calm routine.</p>
+    <section class="features" id="rings">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Two rings. One happy dog.</h2>
+          <p>Everything you need to know about her day, at a glance.</p>
+        </header>
+
+        <div class="bento">
+          <article class="tile tile-rings">
+            <div class="tile-copy">
+              <h3>Close her rings</h3>
+              <p>Sniff minutes fill the lilac ring, walking minutes the sky one. Goals come from her size and age.</p>
+              <dl class="legend">
+                <div><dt><i class="dot sniff"></i>Sniff</dt><dd><b class="ink-sniff">11</b> / 15 min</dd></div>
+                <div><dt><i class="dot walk"></i>Walks</dt><dd><b class="ink-walk">32</b> / 45 min</dd></div>
+              </dl>
+            </div>
+            <div class="rings" style="--sniff:73;--walk:71" role="img" aria-label="Sniff ring 11 of 15 minutes, walks ring 32 of 45 minutes">
+              <svg viewBox="0 0 100 100"><circle class="track sniff" cx="50" cy="50" r="43.5" /><circle class="fill sniff" cx="50" cy="50" r="43.5" pathLength="100" /><circle class="track walk" cx="50" cy="50" r="28.5" /><circle class="fill walk" cx="50" cy="50" r="28.5" pathLength="100" /></svg>
+              <img src="/img/frida.webp" alt="" />
+            </div>
+          </article>
+
+          <article class="tile tile-sniff">
+            <div class="tile-copy">
+              <h3>Sniffing counts</h3>
+              <p>Slow and stopped moments on your route become sniff time. No collar, no extra gadget.</p>
+            </div>
+            <div class="timeline" aria-label="Example walk: 32 minutes, 11 of them sniffing">
+              <div class="timeline-head"><b>Morning walk · 32 min</b><b class="ink-sniff">11 min sniffing</b></div>
+              <div class="bar" aria-hidden="true"><i style="--w:3"></i><i class="s" style="--w:2"></i><i style="--w:4"></i><i class="s" style="--w:3"></i><i style="--w:2"></i><i class="s" style="--w:4"></i><i style="--w:3"></i><i class="s" style="--w:1"></i><i style="--w:3"></i></div>
+              <div class="key"><span><i class="sw walk"></i>Walking</span><span><i class="sw sniff"></i>Sniffing</span></div>
+            </div>
+          </article>
+
+          <article class="tile tile-world" id="world">
+            <div class="tile-copy">
+              <h3>Her world, street by street</h3>
+              <p>Every new street joins her map. Grow from Yard to Neighbourhood, Quarter and District. It never resets.</p>
+              <ol class="levels">
+                <li class="done">Yard <span>5 km</span></li>
+                <li class="now">Neighbourhood <span>12 km</span></li>
+                <li>Quarter <span>25 km</span></li>
+                <li>District <span>60 km</span></li>
+              </ol>
+            </div>
+            <figure class="phone phone-tile" aria-hidden="true"><img src="/img/screen-world.webp" alt="" width="390" height="844" loading="lazy" /></figure>
+          </article>
+
+          <article class="tile tile-celebrate">
+            <div class="rings rings-small" style="--sniff:100;--walk:100" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><circle class="track sniff" cx="50" cy="50" r="43.5" /><circle class="fill sniff" cx="50" cy="50" r="43.5" pathLength="100" /><circle class="track walk" cx="50" cy="50" r="28.5" /><circle class="fill walk" cx="50" cy="50" r="28.5" pathLength="100" /></svg>
+              <img src="/img/frida.webp" alt="" loading="lazy" />
+            </div>
+            <h3>Both rings closed</h3>
+            <p>A small celebration after every walk, with the streets she found today.</p>
+            <span class="pill">+1.2 km of new streets</span>
+          </article>
         </div>
-        <div class="care-row">
-          <h3>Never wonder</h3>
-          <p>See what’s done, what’s next, and who was there.</p>
-        </div>
-        <div class="care-row">
-          <h3>Keep it close</h3>
-          <p>Share care only with the people your dog knows and trusts.</p>
-        </div>
-        <p class="care-closing">Because caring together should feel easy.</p>
       </div>
     </section>
 
-    <section class="download-section">
-      <div class="download-inner">
-        <h2>Ready to care together?</h2>
-        <p>Give your household one simple place for the care your dog counts on.</p>
-        <a class="app-store-badge" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
-          <span class="apple-mark" aria-hidden="true">&#63743;</span>
-          <span>
-            <span class="badge-kicker">Download on the</span>
-            <span class="badge-title">App Store</span>
-          </span>
-        </a>
+    <section class="family" id="family">
+      <div class="wrap family-grid">
+        <div class="family-visual" aria-hidden="true">
+          <figure class="phone phone-family"><img src="/img/screen-household.webp" alt="" width="390" height="844" loading="lazy" /></figure>
+          <div class="chip chip-logged"><span class="chip-badge green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span><span><small>Logged by Mom</small><b class="ink-green">Feeding · 08:10</b></span></div>
+        </div>
+        <div class="family-copy">
+          <h2>Walk her together</h2>
+          <p class="lede">Invite your partner, kids or dog sitter with a QR code or a link. Everyone sees what’s done today, so she never gets fed twice.</p>
+          <ul class="points">
+            <li><span class="badge"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M14 21h7v-4"/></svg></span>Join in seconds with a QR code</li>
+            <li><span class="badge"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Owners and members, each with a role</li>
+            <li><span class="badge"><svg viewBox="0 0 24 24"><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0M3.3 15.3A1 1 0 0 0 4 17h16a1 1 0 0 0 .7-1.7C19.4 14 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.4 6-2.7 7.3"/></svg></span>Shared reminders for food, meds and walks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="wrap">
+        <header class="section-head"><h2>Your first walk in two minutes</h2></header>
+        <ol class="three">
+          <li class="card-white"><span class="num">1</span><h3>Tell us about her</h3><p>Name, size and age. PawTails suggests her daily goals.</p></li>
+          <li class="card-white"><span class="num">2</span><h3>Go for a walk</h3><p>Tap Start walk. Sniff and walk minutes fill as you go.</p></li>
+          <li class="card-white"><span class="num">3</span><h3>Watch her world grow</h3><p>New streets join her map, and her rings close.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-grid">
+        <div>
+          <h2>Questions</h2>
+          <p class="muted">Something else? Write to us from <a href="/about/">Support</a>.</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>How does PawTails know she’s sniffing?</summary>
+            <p>It looks at slow and stopped moments on your walk and counts them as sniff time. It’s an estimate, no collar or gadget needed.</p>
+          </details>
+          <details>
+            <summary>Does it track my location all the time?</summary>
+            <p>Routes are recorded only during a walk you start. If you turn on walk suggestions, PawTails also notices when you leave home.</p>
+          </details>
+          <details>
+            <summary>Can my family use it too?</summary>
+            <p>Yes. Invite them with a QR code or a link, and you all share the same dog, reminders and history.</p>
+          </details>
+          <details>
+            <summary>What if we skip a day?</summary>
+            <p>Nothing breaks. There are no streaks, and her rings start fresh every morning.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-grid">
+        <div>
+          <h2>Her next walk could be her favourite</h2>
+          <div class="cta-row">
+            <a class="store-badge light" href="https://apps.apple.com/app/id6759874369" aria-label="Download PawTails on the App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.5zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+            <span class="cta-note light">For iPhone</span>
+          </div>
+        </div>
+        <div class="rings rings-cta" style="--sniff:100;--walk:100" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle class="track sniff" cx="50" cy="50" r="43.5" /><circle class="fill sniff" cx="50" cy="50" r="43.5" pathLength="100" /><circle class="track walk" cx="50" cy="50" r="28.5" /><circle class="fill walk" cx="50" cy="50" r="28.5" pathLength="100" /></svg>
+          <img src="/img/frida.webp" alt="" loading="lazy" />
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="footer-brand" href="/" aria-label="PawTails home">PawTails</a>
-    <nav aria-label="Footer navigation">
-      <a href="/about/">About</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="mailto:pawtails@proton.me">Contact</a>
-    </nav>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="wordmark" href="/">PawTails</a>
+          <p class="muted">Daily rings and a growing world for your dog.</p>
+        </div>
+        <div class="footer-cols">
+          <div><h4>App</h4><a href="#rings">Rings</a><a href="#world">Dog’s world</a><a href="#family">Family</a></div>
+          <div><h4>Help</h4><a href="/about/">Support</a><a href="#faq">FAQ</a><a href="mailto:pawtails@proton.me">Contact</a></div>
+          <div><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 PawTails</span><span>pawtails-app.com</span></div>
+    </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
