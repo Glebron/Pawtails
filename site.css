@@ -87,8 +87,12 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
   aspect-ratio: 410 / 864;
   padding: calc(var(--w) * .0244);
   border-radius: calc(var(--w) * .151);
-  background: var(--ink);
-  box-shadow: 0 30px 60px rgba(46, 61, 84, .25);
+  background: linear-gradient(150deg, #4A5A73, #1B2433 30%, #222C3D 70%, #4A5A73);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 255, 255, .14),
+    0 0 0 1px rgba(30, 42, 59, .4),
+    0 50px 80px -30px rgba(46, 61, 84, .45),
+    0 24px 40px -24px rgba(46, 61, 84, .35);
   position: relative;
 }
 .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--w) * .127); }
@@ -96,8 +100,8 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
 
 .hero-visual { position: relative; height: 760px; align-self: end; }
 .hero-visual .phone { position: absolute; }
-.phone-back { left: 40px; top: 210px; transform: rotate(4deg); }
-.phone-front { left: 300px; top: 130px; transform: rotate(-4deg); }
+.hero-visual .phone-back { --w: 300px; left: 30px; top: 150px; transform: rotate(-5deg); }
+.hero-visual .phone-front { --w: 330px; left: 270px; top: 50px; transform: rotate(4deg); z-index: 1; }
 
 .chip { position: absolute; display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 14px; border-radius: 22px; background: var(--surface); box-shadow: 0 16px 36px rgba(46, 61, 84, .16); z-index: 3; }
 .chip small { display: block; font-size: 13px; font-weight: 700; color: var(--muted); line-height: 1.2; }
@@ -106,8 +110,8 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
 .chip-badge.sniff { background: #EEE9FE; color: var(--sniff-ink); }
 .chip-badge.green { background: #E3F2EA; color: var(--green-ink); }
 .chip-badge svg, .badge svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.chip-sniff { left: 0; top: 540px; transform: rotate(-4deg); }
-.chip-world { left: 470px; top: 680px; transform: rotate(3deg); }
+.chip-sniff { left: -20px; top: 650px; transform: rotate(-3deg); }
+.chip-world { left: 470px; top: 150px; transform: rotate(3deg); }
 
 /* Principles */
 .principles { background: var(--surface); padding: 112px 0; }
@@ -178,7 +182,7 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
 .levels li.done::before, .levels li.now::before { background: #9CC6F5; }
 .levels li.now { font-weight: 800; }
 .levels span { font-size: 14px; color: #8FA1BA; }
-.phone-tile { position: absolute; left: 360px; top: 64px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+.phone-tile { --w: 280px; position: absolute; right: 56px; top: 56px; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.18), 0 40px 80px -20px rgba(0,0,0,.6); }
 
 .tile-celebrate { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 20px; }
 .tile-celebrate h3 { font-size: 30px; }
@@ -188,11 +192,18 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
 /* Family */
 .family { background: var(--surface); padding: 60px 0; }
 .family-grid { display: grid; grid-template-columns: 560px 1fr; gap: 100px; align-items: center; }
-.family-visual { position: relative; height: 600px; border-radius: 40px; background: linear-gradient(180deg, #E9F3EE, #E3EEFC); }
-.family-visual::before { content: ""; position: absolute; inset: 0; border-radius: inherit; overflow: hidden; }
-.phone-family { position: absolute; left: 75px; top: 50px; height: 550px; aspect-ratio: auto; border-radius: 62px 62px 0 0; padding-bottom: 0; overflow: hidden; box-shadow: none; }
-.phone-family img { height: auto; border-radius: 52px 52px 0 0; }
-.chip-logged { left: 350px; top: 470px; transform: rotate(3deg); }
+.family-visual {
+  position: relative;
+  height: 600px;
+  border-radius: 40px;
+  background:
+    radial-gradient(300px 300px at 85% 15%, rgba(207, 196, 250, .55), transparent 70%),
+    linear-gradient(160deg, #E4EFFD, #EEE9FE);
+}
+.phone-family { --w: 340px; position: absolute; left: 50%; top: 56px; transform: translateX(-50%); }
+.family { overflow: hidden; }
+.family-visual .phone-wrap { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.chip-logged { right: -36px; top: 500px; transform: rotate(3deg); }
 .family-copy { display: flex; flex-direction: column; gap: 24px; }
 .points { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
 .points li { display: flex; align-items: center; gap: 14px; font-size: 18px; font-weight: 700; }
@@ -245,14 +256,14 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
 @media (max-width: 1180px) {
   .hero-grid { grid-template-columns: 1fr; min-height: 0; }
   .hero-copy { padding: 24px 0 0; }
-  .hero-visual { height: 640px; width: 100%; max-width: 760px; margin: 0 auto; }
-  .phone-back { left: 4%; top: 120px; }
-  .phone-front { left: auto; right: 4%; top: 40px; }
-  .chip-sniff { top: 420px; }
-  .chip-world { left: auto; right: 0; top: 560px; }
+  .hero-visual { height: 780px; width: 100%; max-width: 760px; margin: 0 auto; }
+  .hero-visual .phone-back { left: calc(50% - 300px); top: 90px; }
+  .hero-visual .phone-front { left: calc(50% - 20px); top: 30px; }
+  .chip-sniff { left: calc(50% - 360px); top: 560px; }
+  .chip-world { left: calc(50% + 230px); top: 110px; }
   .bento { grid-template-columns: 1fr; }
   .family-grid { grid-template-columns: 1fr; gap: 48px; }
-  .family-visual { max-width: 560px; }
+  .family-visual { width: 100%; max-width: 560px; margin-inline: auto; }
   .faq-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
@@ -264,10 +275,11 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
   .hero-copy { gap: 20px; padding-top: 32px; }
   .eyebrow { display: none; }
   .hero-grid { gap: 8px; }
-  .hero-visual { height: 400px; }
-  .hero-visual .phone { --w: 370px; }
-  .phone-front, .chip-world, .chip-sniff { display: none; }
-  .phone-back { left: 50%; top: 40px; transform: translateX(-50%); }
+  .hero-visual { height: auto; display: flex; justify-content: center; align-items: flex-start; padding: 28px 0 56px; }
+  .hero-visual .phone { position: relative; left: auto; top: auto; }
+  .hero-visual .phone-back { --w: min(44vw, 190px); transform: translateY(36px) rotate(-5deg); margin-right: -6vw; }
+  .hero-visual .phone-front { --w: min(48vw, 208px); transform: rotate(4deg); }
+  .chip-world, .chip-sniff { display: none; }
   .principles, .features, .steps, .faq { padding: 64px 0; }
   .quote { text-align: left; margin-bottom: 24px; }
   .three { grid-template-columns: 1fr; gap: 16px; }
@@ -285,15 +297,15 @@ h1 { font-size: clamp(46px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.02
   .tile-rings .tile-copy { order: 2; align-items: center; }
   .tile-rings .rings { width: 220px; }
   .legend { display: none; }
-  .tile-world { min-height: 600px; }
+  .tile-world { min-height: 0; padding-bottom: 0; }
   .tile-world .tile-copy { max-width: none; }
   .levels { display: none; }
-  .phone-tile { --w: 360px; left: 50%; top: 230px; transform: translateX(-50%); }
+  .phone-tile { --w: 250px; position: relative; right: auto; top: auto; margin: 32px auto -240px; }
   .family { padding: 64px 0; }
   .family-copy { order: -1; gap: 16px; }
   .points li { font-size: 16px; }
-  .family-visual { height: 420px; overflow: hidden; border-radius: 28px; }
-  .phone-family { --w: 360px; left: 50%; top: 40px; transform: translateX(-50%); height: 380px; }
+  .family-visual { height: 440px; border-radius: 28px; }
+  .phone-family { --w: 270px; top: 40px; }
   .chip-logged { display: none; }
   .card-white { padding: 20px; }
   .card-white h3 { font-size: 18px; }
