@@ -33,13 +33,15 @@
       <h1>Clear data practices for shared dog care.</h1>
     </section>
     <section class="content-panel policy-card">
-      <p class="policy-meta"><strong>Last updated:</strong> April 23, 2026</p>
+      <p class="policy-meta"><strong>Last updated:</strong> October 27, 2026</p>
       <h2 class="policy-heading">1. Information PawTails processes</h2>
       <p>PawTails may process the following categories of information:</p>
       <ul class="policy-list">
         <li>A private device-based identifier created by the app and stored on your device.</li>
         <li>Household and membership data, including household membership, roles, invite links, and member display names.</li>
-        <li>Pet care data you create, such as pet name, pet profile answers, routines, reminder settings, task completion history, streaks, calendar or history data, and custom reminder text.</li>
+        <li>Pet care data you create, such as pet name, pet profile answers, routines, reminder settings, task completion history, calendar or history data, daily walk goals, and custom reminder text.</li>
+        <li>Walk data for walks you start: the GPS route, distance, duration, estimated sniff time, the walk type, mood, notes, and photos you add, and who recorded the walk.</li>
+        <li>If you turn on walk suggestions: an approximate home area (a point and a radius) that you choose, stored only on your device.</li>
         <li>Pet images if you choose to add a pet photo.</li>
         <li>Safety or moderation reports you submit, including the report details, category, household or pet ID, reporter device ID, and optional target member reference.</li>
         <li>Push notification token data used to send app notifications and background updates.</li>
@@ -53,8 +55,10 @@
         <li>your real name</li>
         <li>phone number</li>
         <li>contacts</li>
-        <li>precise location</li>
       </ul>
+      <p>
+        Location is optional. Routines, reminders and household sharing work without it. Walk recording and walk suggestions need location permission, which you can turn off at any time in iOS Settings.
+      </p>
       <p>
         PawTails does not collect payment card details directly.
       </p>
@@ -64,7 +68,9 @@
       <ul class="policy-list">
         <li>create and maintain your device-based app identity</li>
         <li>let households share pet care data between invited members</li>
-        <li>save and sync routines, reminders, task completion, streaks, and related household activity</li>
+        <li>save and sync routines, reminders, task completion, walks, and related household activity</li>
+        <li>record walks you start and show their routes, your dog’s daily sniff and walk rings, and the streets your dog has explored</li>
+        <li>suggest a walk when you leave home, if you turn on walk suggestions</li>
         <li>support invite links and joining a household</li>
         <li>show widgets and keep app data in sync</li>
         <li>send notifications and silent background updates</li>
@@ -83,18 +89,28 @@
         <li>who completed a task</li>
         <li>member display names</li>
         <li>household name and roles</li>
+        <li>walks, including their routes, notes, photos, and who recorded them</li>
       </ul>
       <p>
         Do not put sensitive personal information into pet names, member display names, reminders, notes, or safety reports unless it is necessary.
       </p>
 
-      <h2 class="policy-heading">5. Notifications</h2>
+      <h2 class="policy-heading">5. Location</h2>
+      <p>PawTails uses location only for walks and walk suggestions:</p>
+      <ul class="policy-list">
+        <li>Your route is recorded only during a walk you start, including while the screen is locked, and stops when you end the walk.</li>
+        <li>If you turn on walk suggestions and allow location “Always”, iOS tells PawTails when you leave your saved home area so it can suggest a walk, even when the app is closed. No route is recorded for this, and the home area stays on your device.</li>
+        <li>Saved walk routes are stored on your device and synced to your household so members can see them. Routes are simplified to a limited number of points before syncing.</li>
+        <li>Your location is not sold, used for advertising, or shared with anyone outside your household, except the cloud services that store your household data.</li>
+      </ul>
+
+      <h2 class="policy-heading">6. Notifications</h2>
       <p>
         PawTails registers for remote notifications and stores a push token in order to support notifications and background syncing.
         Related technical metadata such as platform, app bundle identifier, and a label associated with the device or member may also be stored for that purpose.
       </p>
 
-      <h2 class="policy-heading">6. Analytics and crash reporting</h2>
+      <h2 class="policy-heading">7. Analytics and crash reporting</h2>
       <p>PawTails uses Firebase Analytics and Firebase Crashlytics.</p>
       <p>These services may receive information such as:</p>
       <ul class="policy-list">
@@ -106,24 +122,26 @@
       </ul>
       <p>This data is used to understand app usage, improve the product, and investigate failures.</p>
 
-      <h2 class="policy-heading">7. Local storage</h2>
+      <h2 class="policy-heading">8. Local storage</h2>
       <p>PawTails stores data locally on your device and in the app group storage used by widgets. This can include:</p>
       <ul class="policy-list">
         <li>your device-based identifier</li>
         <li>active household or pet state</li>
         <li>routines and reminders</li>
         <li>task completion data</li>
+        <li>walks and their routes</li>
+        <li>your walk-suggestion home area, if set</li>
         <li>widget state</li>
         <li>locally cached pet image data</li>
       </ul>
 
-      <h2 class="policy-heading">8. Cloud storage</h2>
+      <h2 class="policy-heading">9. Cloud storage</h2>
       <p>
         PawTails stores shared household data in cloud services used by the app, including Firebase Firestore.
-        This may include household membership data, routines, reminders, task history, invite data, moderation reports, and related sync metadata.
+        This may include household membership data, routines, reminders, task history, walks with their routes, notes and photos, invite data, moderation reports, and related sync metadata.
       </p>
 
-      <h2 class="policy-heading">9. Data retention</h2>
+      <h2 class="policy-heading">10. Data retention</h2>
       <p>
         Data is kept as long as needed to operate the app and provide shared household functionality, unless it is deleted through app controls or removed from the service.
       </p>
@@ -137,11 +155,13 @@
       </ul>
       <p>Some data may remain temporarily in backups, logs, or third-party service retention systems.</p>
 
-      <h2 class="policy-heading">10. Your choices</h2>
+      <h2 class="policy-heading">11. Your choices</h2>
       <p>You can:</p>
       <ul class="policy-list">
         <li>choose your member display name</li>
         <li>choose whether to add a pet image</li>
+        <li>choose whether to allow location, record walks, or turn on walk suggestions, and change this in iOS Settings at any time</li>
+        <li>delete individual walks in the app</li>
         <li>choose what content to type into reminders, notes, and reports</li>
         <li>revoke a member&apos;s access through household controls if you are allowed to manage that household</li>
         <li>reset this device account and delete local data using the in-app deletion or reset controls</li>
@@ -150,18 +170,18 @@
         Because PawTails uses a device-based identity model, access recovery on a new device may require a household invite from an existing member.
       </p>
 
-      <h2 class="policy-heading">11. Children</h2>
+      <h2 class="policy-heading">12. Children</h2>
       <p>
         This Privacy Policy does not state that PawTails is directed to children. If you intend the app for children,
         that should be handled separately and carefully in both the product and App Store compliance materials.
       </p>
 
-      <h2 class="policy-heading">12. Changes to this Privacy Policy</h2>
+      <h2 class="policy-heading">13. Changes to this Privacy Policy</h2>
       <p>
         This Privacy Policy may be updated if the app&apos;s data practices change. If the policy changes, the updated version should be posted at the privacy policy URL used by the app.
       </p>
 
-      <h2 class="policy-heading">13. Contact</h2>
+      <h2 class="policy-heading">14. Contact</h2>
       <ul class="policy-list">
         <li>Email: <a href="mailto:pawtails@proton.me">pawtails@proton.me</a></li>
       </ul>
