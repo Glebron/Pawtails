@@ -79,7 +79,7 @@ h3 { font-size: 20px; line-height: 1.25; letter-spacing: -0.01em; }
 h1 { font-size: clamp(44px, 7.4vw, 92px); line-height: 1.04; letter-spacing: -0.035em; max-width: 13ch; }
 .inline-icon { display: inline-block; width: .9em; height: .9em; vertical-align: -0.12em; margin: 0 .04em; }
 .icon-rings { border-radius: 24%; background: #fff; box-shadow: 0 6px 18px rgba(46, 61, 84, .14), inset 0 0 0 1px var(--line); padding: .06em; }
-.icon-rings svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.icon-rings svg { display: block; width: 100%; height: 100%; transform: rotate(-90deg); }
 .icon-rings circle { fill: none; stroke-width: 14; }
 .icon-rings .track.sniff { stroke: rgba(155, 135, 238, .2); }
 .icon-rings .track.walk { stroke: rgba(111, 170, 240, .22); }
