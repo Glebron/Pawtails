@@ -33,15 +33,15 @@
       <h1>Clear data practices for shared dog care.</h1>
     </section>
     <section class="content-panel policy-card">
-      <p class="policy-meta"><strong>Last updated:</strong> October 27, 2026</p>
+      <p class="policy-meta"><strong>Last updated:</strong> November 4, 2026</p>
       <h2 class="policy-heading">1. Information PawTails processes</h2>
       <p>PawTails may process the following categories of information:</p>
       <ul class="policy-list">
-        <li>A private device-based identifier created by the app and stored on your device.</li>
+        <li>A private device-based identifier created by the app and stored on your device, linked to an anonymous Firebase Authentication account.</li>
         <li>Household and membership data, including household membership, roles, invite links, and member display names.</li>
         <li>Pet care data you create, such as pet name, pet profile answers, routines, reminder settings, task completion history, calendar or history data, daily walk goals, and custom reminder text.</li>
-        <li>Walk data for walks you start: the GPS route, distance, duration, estimated sniff time, the walk type, mood, notes, and photos you add, and who recorded the walk.</li>
-        <li>If you turn on walk suggestions: an approximate home area (a point and a radius) that you choose, stored only on your device.</li>
+        <li>Walk data for walks you start: the GPS route, distance, duration, estimated sniff time, any mood, notes, and photos you add, and who recorded the walk.</li>
+        <li>If you turn on walk suggestions: a home location that you confirm on a map, stored only on your device.</li>
         <li>Pet images if you choose to add a pet photo.</li>
         <li>Safety or moderation reports you submit, including the report details, category, household or pet ID, reporter device ID, and optional target member reference.</li>
         <li>Push notification token data used to send app notifications and background updates.</li>
@@ -99,7 +99,8 @@
       <p>PawTails uses location only for walks and walk suggestions:</p>
       <ul class="policy-list">
         <li>Your route is recorded only during a walk you start, including while the screen is locked, and stops when you end the walk.</li>
-        <li>If you turn on walk suggestions and allow location “Always”, iOS tells PawTails when you leave your saved home area so it can suggest a walk, even when the app is closed. No route is recorded for this, and the home area stays on your device.</li>
+        <li>If you turn on walk suggestions and allow location “Always”, iOS tells PawTails when you leave your saved home area so it can suggest a walk, even when the app is closed. PawTails then checks your location for up to 8 minutes to confirm you are walking. Nothing from this check is recorded or stored, and the home area stays on your device.</li>
+        <li>Motion &amp; Fitness access, if you allow it, is used on your device to skip car and bike trips for walk suggestions. This activity data is not stored or sent to PawTails.</li>
         <li>Saved walk routes are stored on your device and synced to your household so members can see them. Routes are simplified to a limited number of points before syncing.</li>
         <li>Your location is not sold, used for advertising, or shared with anyone outside your household, except the cloud services that store your household data.</li>
       </ul>
