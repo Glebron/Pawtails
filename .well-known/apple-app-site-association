@@ -3,7 +3,10 @@
     "apps": [],
     "details": [
       {
-        "appID": "RQH4FN9YTM.com.glebtsurakov.PetCare.dev2",
+        "appIDs": [
+          "RQH4FN9YTM.com.pawtails-app.ios",
+          "RQH4FN9YTM.com.glebtsurakov.PetCare.dev2"
+        ],
         "paths": [
           "/j",
           "/j/*",
