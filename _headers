@@ -1,3 +1,13 @@
+# Invite pages carry the token in the address and the site has no analytics, so no page sends a referrer.
+# Inline scripts are not allowed: page scripts live in their own files.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
 /.well-known/apple-app-site-association
   Content-Type: application/json
   Cache-Control: public, max-age=3600
@@ -5,4 +15,3 @@
 /review-demo.mp4
   Content-Type: video/mp4
   Cache-Control: public, max-age=3600
-
