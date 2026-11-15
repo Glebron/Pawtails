@@ -20,10 +20,6 @@
     <p>Taking you to your private PawTails invite…</p>
     <p><a class="store-button" href="/j">Open in PawTails</a></p>
   </main>
-  <script>
-    const target = `/j${window.location.search || ""}`;
-    document.querySelector("a").href = target;
-    window.location.replace(target);
-  </script>
+  <script src="/join-redirect.js"></script>
 </body>
 </html>
